@@ -15,13 +15,7 @@ while(True):
         cv2.rectangle(img,(x,y),(x+w,y+h),(0,0,255),2)
         id,conf=rec.predict(gray[y:y+h,x:x+w])
         if(id == 1):
-            id = "Sameer"
-        elif(id == 2):
-            id = "Kinjal"
-        elif(id == 3):
-            id = "navneet"
-        else:
-            id = "Person"
+            id = "Person" # enter name of id user using elif condition
         cv2.cv.PutText(cv2.cv.fromarray(img),str(id),(x,y+h),font,255)
     cv2.imshow("Face",img);
     if (cv2.waitKey(1) == ord('q')):
